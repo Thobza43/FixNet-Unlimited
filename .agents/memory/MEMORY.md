@@ -1,0 +1,2 @@
+- [Stack-substitution for mismatched user requests](stack-substitution.md) — when user asks for Next.js/Prisma/SQLite etc., build on this workspace's fixed stack instead and don't burden non-technical users with the swap.
+- [Redact sensitive fields on unauthenticated tracking endpoints](order-tracking-redaction.md) — public numeric-ID lookups must return a narrowed DTO, never full records with secrets like voucher PINs.
