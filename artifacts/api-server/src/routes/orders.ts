@@ -1,5 +1,5 @@
 import { Router, type IRouter } from "express";
-import { eq } from "drizzle-orm";
+import { eq, and, ne } from "drizzle-orm";
 import { db, ordersTable } from "@workspace/db";
 import {
   CreateOrderBody,
@@ -30,6 +30,22 @@ router.post("/orders", async (req, res): Promise<void> => {
   const parsed = CreateOrderBody.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: parsed.error.message });
+    return;
+  }
+
+  // Reject if the same PIN has already been submitted (and isn't cancelled)
+  const [existing] = await db
+    .select({ id: ordersTable.id })
+    .from(ordersTable)
+    .where(
+      and(
+        eq(ordersTable.voucherPin, parsed.data.voucherPin),
+        ne(ordersTable.status, "Cancelled")
+      )
+    );
+
+  if (existing) {
+    res.status(409).json({ error: "This voucher PIN has already been redeemed." });
     return;
   }
 

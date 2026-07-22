@@ -63,11 +63,12 @@ export default function Home() {
         onSuccess: (order) => {
           setLocation(`/order/${order.id}`);
         },
-        onError: () => {
+        onError: (err: any) => {
+          const msg = err?.response?.data?.error || err?.message;
           toast({
             variant: "destructive",
             title: "Submission Failed",
-            description: "Please check your details and try again.",
+            description: msg || "Please check your details and try again.",
           });
         },
       }
