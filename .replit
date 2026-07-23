@@ -21,3 +21,9 @@ timeoutMs = 20000
 
 [nix]
 channel = "stable-25_05"
+
+[userenv]
+
+[userenv.shared]
+CALLMEBOT_API_KEY = "1234567"
+CALLMEBOT_PHONE = "27631165173"

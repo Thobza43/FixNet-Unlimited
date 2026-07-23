@@ -7,6 +7,7 @@ import {
   GetOrderParams,
   GetOrderResponse,
 } from "@workspace/api-zod";
+import { notifyWhatsApp } from "../lib/whatsappNotify";
 
 function toOrderTracking(order: {
   id: number;
@@ -53,6 +54,16 @@ router.post("/orders", async (req, res): Promise<void> => {
     .insert(ordersTable)
     .values(parsed.data)
     .returning();
+
+  // Fire-and-forget WhatsApp notification to admin
+  const msg =
+    `🛎 New FixNet Order #${order.id}\n` +
+    `Network: ${order.network}\n` +
+    `Voucher: ${order.voucherType}\n` +
+    `PIN: ${order.voucherPin}\n` +
+    `Phone: ${order.phone}\n` +
+    `WhatsApp: ${order.whatsapp}`;
+  notifyWhatsApp(msg);
 
   res.status(201).json(CreateOrderResponse.parse(order));
 });
