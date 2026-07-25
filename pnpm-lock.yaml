@@ -156,14 +156,10 @@ overrides:
 importers:
 
   .:
-    dependencies:
-      '@replit/connectors-sdk':
-        specifier: ^0.4.1
-        version: 0.4.1
     devDependencies:
       prettier:
         specifier: ^3.9.4
-        version: 3.9.4
+        version: 3.9.6
       typescript:
         specifier: ~5.9.3
         version: 5.9.3
@@ -608,7 +604,7 @@ importers:
     devDependencies:
       orval:
         specifier: ^8.20.0
-        version: 8.20.0(prettier@3.9.4)(typescript@5.9.3)
+        version: 8.20.0(prettier@3.9.6)(typescript@5.9.3)
 
   lib/api-zod:
     dependencies:
@@ -1471,9 +1467,6 @@ packages:
 
   '@radix-ui/rect@1.1.2':
     resolution: {integrity: sha512-xnXE7wG13PI+cxieVssYXlQJuYVRhH9NBoxt3KNwzghDIA69GMm7d4wXRouHIYjE+KvS6U/MsMO73NdS2MH9ZA==}
-
-  '@replit/connectors-sdk@0.4.1':
-    resolution: {integrity: sha512-iw0uy95+Qul8MPc/bBo8hBfYk1wm6RpBZ9sHyCpcA9A9T4zcUT9deSQxdyMyI0w3sv3+5uGmdfq1TpFTMrjD1g==}
 
   '@replit/vite-plugin-cartographer@0.5.21':
     resolution: {integrity: sha512-E5rco8Mov05QDfUOjoim3MVJdDX0/pBYql5Jay3w9cqmU/QOL6cEOUAjsBZPB/V8FEChsk++sZUrcWt1bHaAoQ==}
@@ -2563,8 +2556,8 @@ packages:
     resolution: {integrity: sha512-vuwillviilfKZsg0VGj5R/YwwcHx4SLsIOI/7K6mQkWx+l5cUHTjj5g0AasTBcyXsbfTgrwsUNmVUb5xVwyPwg==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier@3.9.4:
-    resolution: {integrity: sha512-yWG/o/4oJfo036EKAfK6ACAoDOfHeRHx4tuxkfBZiauURiaSmYwlpOr5LQqKtIkRD2z1PLteme2WoxEnj4tHTg==}
+  prettier@3.9.6:
+    resolution: {integrity: sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -4013,8 +4006,6 @@ snapshots:
 
   '@radix-ui/rect@1.1.2': {}
 
-  '@replit/connectors-sdk@0.4.1': {}
-
   '@replit/vite-plugin-cartographer@0.5.21':
     dependencies:
       '@babel/parser': 7.29.7
@@ -4896,7 +4887,7 @@ snapshots:
     dependencies:
       wrappy: 1.0.2
 
-  orval@8.20.0(prettier@3.9.4)(typescript@5.9.3):
+  orval@8.20.0(prettier@3.9.6)(typescript@5.9.3):
     dependencies:
       '@commander-js/extra-typings': 15.0.0(commander@15.0.0)
       '@orval/angular': 8.20.0(typescript@5.9.3)
@@ -4928,7 +4919,7 @@ snapshots:
       typedoc-plugin-coverage: 4.0.3(typedoc@0.28.19(typescript@5.9.3))
       typedoc-plugin-markdown: 4.12.0(typedoc@0.28.19(typescript@5.9.3))
     optionalDependencies:
-      prettier: 3.9.4
+      prettier: 3.9.6
     transitivePeerDependencies:
       - '@faker-js/faker'
       - supports-color
@@ -5018,7 +5009,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  prettier@3.9.4: {}
+  prettier@3.9.6: {}
 
   pretty-ms@9.3.0:
     dependencies:
